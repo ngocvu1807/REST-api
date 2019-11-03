@@ -1,0 +1,53 @@
+const routes = [
+  {
+    getAllTodos: "http://localhost:57602/api/todos/",
+    method: "GET",
+    response: [{
+      id: "1",
+      completed: false,
+      text: "foo"
+    }, {
+      id: "2",
+      completed: true,
+      text: "foo2"
+    }]
+  },
+  {
+    addTodo: 'http://localhost:57602/api/todos/',
+    method: "POST",
+    body: {
+      completed: false,
+      text: "Task 1"
+    },
+    response: { id } // working on
+  },
+  {
+    editTodoText: 'http://localhost:57602/api/todos/1',
+    method: "PATCH",
+    body: {
+      text: "Task 1",
+    }
+  },
+  {
+    toggleTodo: 'http://localhost:57602/api/todos/1',
+    method: "PATCH",
+    body: {
+      completed: false,
+    }
+  },
+  {
+    toggleTodos: 'http://localhost:57602/api/todos/',
+    method: "PATCH",
+    body: {
+        completed: false
+    }
+  },
+  {
+    deleteTodo: 'http://localhost:57602/api/todos/1',
+    method: "DELETE"
+  },
+  {
+    clearCompletedTodos: "http://localhost:8123/todos/",
+    method: "DELETE"
+  }
+]
